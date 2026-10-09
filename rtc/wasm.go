@@ -11,22 +11,14 @@ import (
 	"github.com/nobonobo/irpc-demo/services/rtcmsg"
 )
 
-type session struct{}
-
-func (s *session) Send(msg rtcmsg.Message) error {
-	log.Println(msg.Name, " -> ", msg.Text)
-	return nil
-}
-
-func RunHost(id string) {
+func RunHost(impl rtcmsg.Session, id string) {
 	host := node.NewHost(id)
 	defer host.Close()
-	session := &session{}
 	host.OnConnected = func(n *node.Node) {
 		log.Printf("Connected: %s", n.ID())
 		n.PeerConnection().OnDataChannel(func(dc *webrtc.DataChannel) {
 			conn := New(dc)
-			svc := rtcmsg.NewSessionIrpcService(session)
+			svc := rtcmsg.NewSessionIrpcService(impl)
 			ep := irpc.NewEndpoint(conn, irpc.WithEndpointServices(svc))
 			log.Println("ep:", ep)
 		})
