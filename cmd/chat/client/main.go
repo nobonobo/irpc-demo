@@ -8,7 +8,7 @@ import (
 	"net"
 	"os"
 
-	"irpc-demo/services/chat"
+	"github.com/nobonobo/irpc-demo/services/chat"
 
 	"github.com/marben/irpc"
 )

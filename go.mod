@@ -1,4 +1,4 @@
-module irpc-demo
+module github.com/nobonobo/irpc-demo
 
 go 1.27
 

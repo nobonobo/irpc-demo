@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"irpc-demo/rtc"
+	"github.com/nobonobo/irpc-demo/rtc"
 
 	"github.com/pion/webrtc/v4"
 )

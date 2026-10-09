@@ -2,12 +2,13 @@ package rtc
 
 import (
 	"context"
-	"irpc-demo/services/rtcmsg"
 	"log"
 
 	"github.com/marben/irpc"
 	"github.com/nobonobo/rtcconnect/node"
 	"github.com/pion/webrtc/v4"
+
+	"github.com/nobonobo/irpc-demo/services/rtcmsg"
 )
 
 type session struct{}

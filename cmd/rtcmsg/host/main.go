@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 
-	"irpc-demo/rtc"
+	"github.com/nobonobo/irpc-demo/rtc"
 )
 
 func main() {

@@ -7,8 +7,8 @@ import (
 	"time"
 	"uuid"
 
-	"irpc-demo/rtc"
-	"irpc-demo/services/rtcmsg"
+	"github.com/nobonobo/irpc-demo/rtc"
+	"github.com/nobonobo/irpc-demo/services/rtcmsg"
 )
 
 func main() {
