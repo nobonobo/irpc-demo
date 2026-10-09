@@ -10,14 +10,14 @@ import (
 	"github.com/marben/irpc"
 )
 
-type worker struct {
-	event chat.Event
-}
-
 var (
 	mutex   sync.RWMutex
 	clients = map[*worker]struct{}{}
 )
+
+type worker struct {
+	event chat.Event
+}
 
 func (w *worker) Send(msg chat.Message) error {
 	mutex.RLock()
